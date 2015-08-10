@@ -70,3 +70,10 @@ exports['t08'] = function (test) {
   test.equal(this.xw.toString(), '<tag key1="&#x9;&#xA;&#xD;"/>');
   test.done();
 };
+exports['t09'] = function (test) {
+  this.xw.startElement('tag');
+  this.xw.writeAttribute('key1', '');
+  test.equal(this.xw.toString(), '<tag key1=""/>');
+  test.done();
+};
+
